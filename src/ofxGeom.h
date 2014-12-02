@@ -2,9 +2,11 @@
  * (C) 2014 Christian Parsons
  * www.chparsons.com.ar
  *
- * taken from:
+ * stuff taken from:
  *
  * http://deusexmachina.googlecode.com/svn/trunk/DEM/Src/nebula2/inc/mathlib/
+ * http://paulbourke.net/geometry/pointlineplane/
+ * https://github.com/rgbdemo/nestk/
  *
  */
 

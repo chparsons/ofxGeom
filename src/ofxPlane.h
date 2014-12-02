@@ -146,9 +146,9 @@ inline bool ofxPlane::intersect(const ofxPlane& p, ofxLine3& l) const
 {
     ofVec3f n0 = this->normal();
     ofVec3f n1 = p.normal();
-    float n00 = n0 % n0;
-    float n01 = n0 % n1;
-    float n11 = n1 % n1;
+    float n00 = n0.dot(n0);
+    float n01 = n0.dot(n1);
+    float n11 = n1.dot(n1);
     float det = n00 * n11 - n01 * n01;
     const float tol = 1e-06f;
     if (fabs(det) < tol) 
