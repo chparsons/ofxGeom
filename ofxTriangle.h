@@ -29,9 +29,9 @@ class ofxTriangle
 
     ofxTriangle() {};
     ofxTriangle(const ofxVec3f& v0, const ofxVec3f& v1, const ofxVec3f& v2)
-      : b(v0), e0(v1 - v0), e1(v2 - v0) {}
+      : b(v0), e0(v1 - v0), e1(v2 - v0) {};
     ofxTriangle(const ofxTriangle& t)
-      : b(t.b), e0(t.e0), e1(t.e1) {}
+      : b(t.b), e0(t.e0), e1(t.e1) {};
 
     void set(const ofxVec3f& v0, const ofxVec3f& v1, const ofxVec3f& v2) 
     {
