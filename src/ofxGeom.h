@@ -1,8 +1,8 @@
 /*
- * (C) 2014 Christian Parsons
+ * 2014 Christian Parsons
  * www.chparsons.com.ar
  *
- * stuff taken from:
+ * based on:
  *
  * http://deusexmachina.googlecode.com/svn/trunk/DEM/Src/nebula2/inc/mathlib/
  * http://paulbourke.net/geometry/pointlineplane/

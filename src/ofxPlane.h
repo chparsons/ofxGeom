@@ -1,18 +1,13 @@
 /*
- * (C) 2014 Christian Parsons
+ * 2014 Christian Parsons
  * www.chparsons.com.ar
  *
- * taken from:
+ * based on:
  *
  * http://deusexmachina.googlecode.com/svn/trunk/DEM/Src/nebula2/inc/mathlib/plane.h
  * https://github.com/rgbdemo/nestk/
  *
- * @class plane
- * @ingroup NebulaMathDataTypes
- *
  * A plane in 3d space.
- *
- * (C) 2004 RadonLabsGmbH
  */
 
 #pragma once

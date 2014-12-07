@@ -1,17 +1,12 @@
 /*
- * (C) 2014 Christian Parsons
+ * 2014 Christian Parsons
  * www.chparsons.com.ar
  *
- * taken from:
+ * based on:
  *
  * http://deusexmachina.googlecode.com/svn/trunk/DEM/Src/nebula2/inc/mathlib/triangle.h
  *
- * @class triangle
- * @ingroup NebulaMathDataTypes
- *
  * A 3D triangle.
- *
- * (C) 2004 RadonLabs GmbH
  */
 
 #pragma once

@@ -1,17 +1,12 @@
 /*
- * (C) 2014 Christian Parsons
+ * 2014 Christian Parsons
  * www.chparsons.com.ar
  *
- * taken from:
+ * based on:
  *
  * http://deusexmachina.googlecode.com/svn/trunk/DEM/Src/nebula2/inc/mathlib/line.h
  *
- * @class line3
- * @ingroup NebulaMathDataTypes
- *
  * A 3-dimensional line class.
- *
- * (C) 2004 RadonLabs GmbH
  */
 
 #pragma once
@@ -43,7 +38,6 @@ class ofxLine3
     /// return p = b + m*t
     ofVec3f interpolated(float t) const;
 
-    /// intersect
     bool intersect(const ofxLine3& l, ofVec3f& pa, ofVec3f& pb) const;
 
     /// return t of the closest point on the line
