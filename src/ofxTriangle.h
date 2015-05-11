@@ -28,6 +28,11 @@ class ofxTriangle
     ofxTriangle(const ofxTriangle& t)
       : b(t.b), e0(t.e0), e1(t.e1) {};
 
+    string toString()
+    {
+      return "[ofxTriangle b: "+ofToString(this->b)+" e0: "+ofToString(this->e0)+" e1: "+ofToString(this->e1)+" ]";
+    };
+
     void set(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v2) 
     {
       b  = v0;
@@ -43,8 +48,8 @@ class ofxTriangle
       return cross;
     };
 
-    //--- get the midpoint (center of gravity) of the triangle ----------------
-    ofVec3f midpoint() const 
+    //--- get the centroid (center of gravity) of the triangle ----------------
+    ofVec3f centroid() const 
     {
       const float oneThird = 1.0f / 3.0f;
       return b + ((e0 + e1) * oneThird);
@@ -57,7 +62,7 @@ class ofxTriangle
     };
 
     //--- get one the edge points ---------------------------------------------
-    ofVec3f point(int i) const
+    ofVec3f vertex(int i) const
     {
       switch (i)
       {

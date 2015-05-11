@@ -22,9 +22,11 @@ class ofxPlane
     ofxPlane(float A, float B, float C, float D);
     ofxPlane(const ofxPlane& p);
     ofxPlane(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v2);
+    ofxPlane(const ofVec3f& point, const ofVec3f& normal);
 
     void set(float A, float B, float C, float D);
     void set(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v2);
+    void set(const ofVec3f& point, const ofVec3f& normal);
 
     float distance(const ofVec3f& v) const;
     ofVec3f normal() const;
@@ -79,6 +81,23 @@ inline void ofxPlane::set(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v
 inline ofxPlane::ofxPlane(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v2)
 {
   this->set(v0, v1, v2);
+}
+
+/**
+  Constructs a Plane from a point and a normal.
+  */
+inline void ofxPlane::set(const ofVec3f& point, const ofVec3f& normal)
+{
+  ofVec3f n = normal.normalized();
+  this->a = n.x;
+  this->b = n.y;
+  this->c = n.z;
+  this->d = -(a * point.x + b * point.y + c * point.z);
+}
+
+inline ofxPlane::ofxPlane(const ofVec3f& point, const ofVec3f& normal)
+{
+  this->set(point, normal);
 }
 
 /**
