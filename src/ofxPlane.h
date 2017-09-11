@@ -41,15 +41,15 @@ class ofxPlane
 };
 
 inline ofxPlane::ofxPlane() :
-	a(0.0f), b(0.0f), c(0.0f), d(1.0f)
+  a(0.0f), b(0.0f), c(0.0f), d(1.0f)
 {}
 
 inline ofxPlane::ofxPlane(float A, float B, float C, float D) :
-	a(A), b(B), c(C), d(D)
+  a(A), b(B), c(C), d(D)
 {}
 
 inline ofxPlane::ofxPlane(const ofxPlane& rhs) :
-	a(rhs.a), b(rhs.b), c(rhs.c), d(rhs.d)
+  a(rhs.a), b(rhs.b), c(rhs.c), d(rhs.d)
 {}
 
 inline string ofxPlane::toString()
@@ -88,7 +88,7 @@ inline ofxPlane::ofxPlane(const ofVec3f& v0, const ofVec3f& v1, const ofVec3f& v
   */
 inline void ofxPlane::set(const ofVec3f& point, const ofVec3f& normal)
 {
-  ofVec3f n = normal.normalized();
+  ofVec3f n = normal.getNormalized();
   this->a = n.x;
   this->b = n.y;
   this->c = n.z;
@@ -158,25 +158,25 @@ inline bool ofxPlane::intersect(const ofxLine3& l, ofVec3f& intersection) const
 
 inline bool ofxPlane::intersect(const ofxPlane& p, ofxLine3& l) const
 {
-    ofVec3f n0 = this->normal();
-    ofVec3f n1 = p.normal();
-    float n00 = n0.dot(n0);
-    float n01 = n0.dot(n1);
-    float n11 = n1.dot(n1);
-    float det = n00 * n11 - n01 * n01;
-    const float tol = 1e-06f;
-    if (fabs(det) < tol) 
-    {
-        return false;
-    }
-    else 
-    {
-        float inv_det = 1.0f/det;
-        float c0 = (n11 * this->d - n01 * p.d) * inv_det;
-        float c1 = (n00 * p.d - n01 * this->d) * inv_det;
-        l.m = n0 * n1;
-        l.b = n0 * c0 + n1 * c1;
-        return true;
-    }
+  ofVec3f n0 = this->normal();
+  ofVec3f n1 = p.normal();
+  float n00 = n0.dot(n0);
+  float n01 = n0.dot(n1);
+  float n11 = n1.dot(n1);
+  float det = n00 * n11 - n01 * n01;
+  const float tol = 1e-06f;
+  if (fabs(det) < tol) 
+  {
+    return false;
+  }
+  else 
+  {
+    float inv_det = 1.0f/det;
+    float c0 = (n11 * this->d - n01 * p.d) * inv_det;
+    float c1 = (n00 * p.d - n01 * this->d) * inv_det;
+    l.m = n0 * n1;
+    l.b = n0 * c0 + n1 * c1;
+    return true;
+  }
 }
 
